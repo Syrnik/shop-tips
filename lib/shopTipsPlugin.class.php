@@ -13,4 +13,17 @@ class shopTipsPlugin extends shopPlugin
                 '</table></div>'
         );
     }
+
+    /**
+     * Returns info about coupon by its ID
+     *
+     * @param int|string $coupon_id
+     * @return array|null
+     */
+    public static function getCouponById($coupon_id)
+    {
+        $Coupon = new shopCouponModel();
+
+        return $Coupon->getById($coupon_id);
+    }
 }
