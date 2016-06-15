@@ -1,5 +1,16 @@
 <?php
+/**
+ * Tips plugin for Shop-Script 5+
+ *
+ * @author Serge Rodovnichenko <serge@syrnik.com>
+ * @version 1.1.0
+ * @copyright Serge Rodovnichenko, 2015-2016
+ * @license MIT
+ */
 
+/**
+ * Main plugin class
+ */
 class shopTipsPlugin extends shopPlugin
 {
     public function hookBackendProduct($product)
@@ -12,5 +23,18 @@ class shopTipsPlugin extends shopPlugin
                 ($product['edit_datetime'] !== null ? '<tr><td>Изменен</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format('humandate', strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
                 '</table></div>'
         );
+    }
+
+    /**
+     * Returns info about coupon by its ID
+     *
+     * @param int|string $coupon_id
+     * @return array|null
+     */
+    public static function getCouponById($coupon_id)
+    {
+        $Coupon = new shopCouponModel();
+
+        return $Coupon->getById($coupon_id);
     }
 }
