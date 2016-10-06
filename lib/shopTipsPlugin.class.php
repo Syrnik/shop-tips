@@ -45,7 +45,7 @@ class shopTipsPlugin extends shopPlugin
             return array();
         }
 
-        $est_delivery = htmlentities($est_delivery, ENT_QUOTES, 'UTF-8');
+//        $est_delivery = htmlentities($est_delivery, ENT_QUOTES, 'UTF-8');
 
         $html = <<<EOT
 <script type="text/javascript">
