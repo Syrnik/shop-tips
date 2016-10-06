@@ -37,4 +37,21 @@ class shopTipsPlugin extends shopPlugin
 
         return $Coupon->getById($coupon_id);
     }
+
+    public function hookBackendOrder($params)
+    {
+        $est_delivery = ifset($params['params']['shipping_est_delivery']);
+        if(!$est_delivery) {
+            return array();
+        }
+
+        $est_delivery = htmlentities($est_delivery, ENT_QUOTES, 'UTF-8');
+
+        $html = <<<EOT
+<script type="text/javascript">
+$(function(){ $('p.s-order-address', 'div.s-order').before('<p style="margin-bottom: 0.5em"><span class="gray">Расчетный срок доставки &mdash;</span> $est_delivery</p>') });
+</script>
+EOT;
+        return array('info_section' => $html);
+    }
 }
