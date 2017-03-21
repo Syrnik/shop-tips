@@ -15,12 +15,18 @@ class shopTipsPlugin extends shopPlugin
 {
     public function hookBackendProduct($product)
     {
+        $format = $this->getSettings('product_date');
+        if (!in_array($format, array('date', 'datetime'))) {
+            return array();
+        } else {
+            $format = 'human' . $format;
+        }
         return array(
             'toolbar_section' =>
-                '<div class="small"><table class="zebra" style="border:1px solid powderblue;border-collapse:collapse"><tr><td>Дата создания:</td><td style="white-space: nowrap;text-align: right; font-weight: bold">' .
-                waDateTime::format('humandate', strtotime($product['create_datetime'])) .
+                '<div class="small"><table class="zebra bottom-bordered"><tr><td>Создан:</td><td style="white-space: nowrap;text-align: right; font-weight: bold">' .
+                waDateTime::format($format, strtotime($product['create_datetime'])) .
                 '</td></tr>' .
-                ($product['edit_datetime'] !== null ? '<tr><td>Изменен</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format('humandate', strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
+                ($product['edit_datetime'] !== null ? '<tr><td>Изменен</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format($format, strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
                 '</table></div>'
         );
     }
