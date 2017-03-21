@@ -3,7 +3,7 @@
  * Tips plugin for Shop-Script 5+
  *
  * @author Serge Rodovnichenko <serge@syrnik.com>
- * @version 1.1.0
+ * @version 1.2.0
  * @copyright Serge Rodovnichenko, 2015-2016
  * @license MIT
  */
@@ -36,5 +36,22 @@ class shopTipsPlugin extends shopPlugin
         $Coupon = new shopCouponModel();
 
         return $Coupon->getById($coupon_id);
+    }
+
+    public function hookBackendOrder($params)
+    {
+        $est_delivery = ifset($params['params']['shipping_est_delivery']);
+        if(!$est_delivery) {
+            return array();
+        }
+
+//        $est_delivery = htmlentities($est_delivery, ENT_QUOTES, 'UTF-8');
+
+        $html = <<<EOT
+<script type="text/javascript">
+$(function(){ $('p.s-order-address', 'div.s-order').before('<p style="margin-bottom: 0.5em"><span class="gray">Расчетный срок доставки &mdash;</span> $est_delivery</p>') });
+</script>
+EOT;
+        return array('info_section' => $html);
     }
 }
