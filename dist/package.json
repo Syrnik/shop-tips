@@ -1,0 +1,16 @@
+{
+  "name": "tips",
+  "dependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.0.0",
+    "css-loader": "^0.26.1",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "webpack": "^2.2.1"
+  }
+}
