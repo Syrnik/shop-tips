@@ -31,6 +31,11 @@ class shopTipsPlugin extends shopPlugin
         );
     }
 
+    public function hookBackendProducts()
+    {
+        $this->addJs('js/product.js');
+    }
+
     /**
      * Returns info about coupon by its ID
      *
@@ -47,7 +52,7 @@ class shopTipsPlugin extends shopPlugin
     public function hookBackendOrder($params)
     {
         $est_delivery = ifset($params['params']['shipping_est_delivery']);
-        if(!$est_delivery) {
+        if (!$est_delivery) {
             return array();
         }
 
