@@ -15,25 +15,27 @@ class shopTipsPlugin extends shopPlugin
 {
     public function hookBackendProduct($product)
     {
+        $result = array();
         $format = $this->getSettings('product_date');
-        if (!in_array($format, array('date', 'datetime'))) {
-            return array();
-        } else {
+        if (in_array($format, array('date', 'datetime'))) {
             $format = 'human' . $format;
-        }
-        return array(
-            'toolbar_section' =>
+            $result['toolbar_section'] =
                 '<div class="small"><table class="zebra bottom-bordered"><tr><td>Создан:</td><td style="white-space: nowrap;text-align: right; font-weight: bold">' .
                 waDateTime::format($format, strtotime($product['create_datetime'])) .
                 '</td></tr>' .
                 ($product['edit_datetime'] !== null ? '<tr><td>Изменен</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format($format, strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
-                '</table></div>'
-        );
+                '</table></div>';
+        }
+
+        $view = wa()->getView();
+        $result['tab_li'] = $view->fetch($this->path . '/templates/hooks/backend_product_tab_li.html');
+
+        return $result;
     }
 
     public function hookBackendProducts()
     {
-        $this->addJs('js/product.js');
+        $this->addJs('js/tips.js');
     }
 
     /**
