@@ -32,3 +32,39 @@ msgstr "История правок"
 #: /wa-apps/shop/plugins/tips/lib/config/settings.php:18
 msgid "Show a product editing history in the separate tab at product view page in backend"
 msgstr "Показывать историю редактирования товара в отдельной вкладке на странице товара в бекенде"
+
+#: /wa-apps/shop/plugins/tips/lib/shopTipsPlugin.class.php:23
+msgid "Created"
+msgstr "Создан"
+
+#: /wa-apps/shop/plugins/tips/lib/shopTipsPlugin.class.php:26
+msgid "Updated"
+msgstr "Обновлен"
+
+#: /wa-apps/shop/plugins/tips/lib/shopTipsPlugin.class.php:66
+msgid "Estimated delivery date"
+msgstr "Расчетный срок доставки"
+
+#: /wa-apps/shop/plugins/tips/lib/config/plugin.php:11
+msgid "Useful Stuff"
+msgstr "Полезные мелочи"
+
+#: /wa-apps/shop/plugins/tips/lib/config/settings.php:10
+msgid "Product dates"
+msgstr "Даты товара"
+
+#: /wa-apps/shop/plugins/tips/lib/config/settings.php:11
+msgid "Show date of creation and editing of product"
+msgstr "Показывать даты создания и редактирования товара"
+
+#: /wa-apps/shop/plugins/tips/lib/config/settings.php:14
+msgid "do not show"
+msgstr "не показывать"
+
+#: /wa-apps/shop/plugins/tips/lib/config/settings.php:14
+msgid "date"
+msgstr "дату"
+
+#: /wa-apps/shop/plugins/tips/lib/config/settings.php:14
+msgid "date and time"
+msgstr "дату и время"

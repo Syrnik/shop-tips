@@ -20,10 +20,10 @@ class shopTipsPlugin extends shopPlugin
         if (in_array($format, array('date', 'datetime'))) {
             $format = 'human' . $format;
             $result['toolbar_section'] =
-                '<div class="small"><table class="zebra bottom-bordered"><tr><td>Создан:</td><td style="white-space: nowrap;text-align: right; font-weight: bold">' .
+                '<div class="small"><table class="zebra bottom-bordered"><tr><td>'._wp('Created').':</td><td style="white-space: nowrap;text-align: right; font-weight: bold">' .
                 waDateTime::format($format, strtotime($product['create_datetime'])) .
                 '</td></tr>' .
-                ($product['edit_datetime'] !== null ? '<tr><td>Изменен</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format($format, strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
+                ($product['edit_datetime'] !== null ? '<tr><td>'._wp('Updated').':</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format($format, strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
                 '</table></div>';
         }
 
@@ -63,10 +63,11 @@ class shopTipsPlugin extends shopPlugin
         }
 
 //        $est_delivery = htmlentities($est_delivery, ENT_QUOTES, 'UTF-8');
+        $est_delivery_str = _wp('Estimated delivery date');
 
         $html = <<<EOT
 <script type="text/javascript">
-$(function(){ $('p.s-order-address', 'div.s-order').before('<p style="margin-bottom: 0.5em"><span class="gray">Расчетный срок доставки &mdash;</span> $est_delivery</p>') });
+$(function(){ $('p.s-order-address', 'div.s-order').before('<p style="margin-bottom: 0.5em"><span class="gray">$est_delivery_str &mdash;</span> $est_delivery</p>') });
 </script>
 EOT;
         return array('info_section' => $html);

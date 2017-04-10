@@ -7,11 +7,11 @@
  */
 return array(
     'product_date' => array(
-        'title'        => 'Даты товара',
-        'description'  => 'Показывать даты создания и редактирования товара',
+        'title'        => _wp('Product dates'),
+        'description'  => _wp('Show date of creation and editing of product'),
         'control_type' => waHtmlControl::SELECT,
         'value'        => 'date',
-        'options'      => array('no' => 'не показывать', 'date' => 'дату', 'datetime' => 'дату и время')
+        'options'      => array('no' => _wp('do not show'), 'date' => _wp('date'), 'datetime' => _wp('date and time'))
     ),
     'edit_history' => array(
         'title'        => _wp('Edit history'),

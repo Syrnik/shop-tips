@@ -8,7 +8,7 @@
  * @license MIT
  */
 return array(
-    'name'     => 'Полезные мелочи',
+    'name'     => _wp('Useful Stuff'),
     'img'      => 'img/tips.png',
     'version'  => '1.3.0',
     'vendor'   => '670917',
