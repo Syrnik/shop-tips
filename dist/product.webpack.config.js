@@ -7,7 +7,7 @@ module.exports = {
     ],
     output: {
         path: __dirname,
-        filename: '../js/product.js',
+        filename: '../js/tips.js',
         libraryTarget: 'var',
         library: 'productTips'
     },
