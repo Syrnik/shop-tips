@@ -14,7 +14,8 @@ return array(
     'vendor'   => '670917',
     'handlers' =>
         array(
-            'backend_product' => 'hookBackendProduct',
-            'backend_order'   => 'hookBackendOrder'
+            'backend_product'  => 'hookBackendProduct',
+            'backend_products' => 'hookBackendProducts',
+            'backend_order'    => 'hookBackendOrder'
         ),
 );
