@@ -27,15 +27,19 @@ class shopTipsPlugin extends shopPlugin
                 '</table></div>';
         }
 
-        $view = wa()->getView();
-        $result['tab_li'] = $view->fetch($this->path . '/templates/hooks/backend_product_tab_li.html');
+        if ((bool)$this->getSettings('edit_history')) {
+            $view = wa()->getView();
+            $result['tab_li'] = $view->fetch($this->path . '/templates/hooks/backend_product_tab_li.html');
+        }
 
         return $result;
     }
 
     public function hookBackendProducts()
     {
-        $this->addJs('js/tips.js');
+        if ((bool)$this->getSettings('edit_history')) {
+            $this->addJs('js/tips.js');
+        }
     }
 
     /**

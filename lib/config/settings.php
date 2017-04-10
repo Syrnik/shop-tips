@@ -12,5 +12,11 @@ return array(
         'control_type' => waHtmlControl::SELECT,
         'value'        => 'date',
         'options'      => array('no' => 'не показывать', 'date' => 'дату', 'datetime' => 'дату и время')
+    ),
+    'edit_history' => array(
+        'title'        => _wp('Edit history'),
+        'description'  => _wp('Show a product editing history in the separate tab at product view page in backend'),
+        'control_type' => waHtmlControl::CHECKBOX,
+        'value'        => '0'
     )
 );
