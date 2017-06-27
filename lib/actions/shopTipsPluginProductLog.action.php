@@ -46,7 +46,11 @@ class shopTipsPluginProductLogAction extends waViewAction
 
         $total = (int)$this->Log->countByProduct($product_id);
 
-        $total_pages = ceil($total / $limit);
+        $total_pages = (int)ceil($total / $limit);
+        if ($total_pages < 1) {
+            $total_pages = 1;
+        }
+
         if ($page > $total_pages) {
             $page = $total_pages;
         }
