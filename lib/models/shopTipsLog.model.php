@@ -8,15 +8,24 @@
  */
 class shopTipsLogModel extends waLogModel
 {
+    /**
+     * @param int $product_id
+     * @param null|int $limit
+     * @return array
+     */
     public function getProductLog($product_id, $limit=null)
     {
-        $events = $this->getLogs(array('app_id' => 'shop', 'action' => array('product_add', 'product_edit'), 'params' => $product_id), $limit);
+        try {
+            $events = $this->getLogs(array('app_id' => 'shop', 'action' => array('product_add', 'product_edit'), 'params' => $product_id), $limit);
+        } catch (waException $e) {
+            return array();
+        }
         $actions = wa('shop')->getConfig()->getLogActions(true);
         foreach ($events as &$e) {
             $e['datetime_human'] = waDateTime::format('humandatetime', strtotime($e['datetime']));
             $e += array(
                 'type'        => $this->actionType($e['action']),
-                'action_name' => ifset($actions[$e['action']]['name'], $e['action'])
+                'action_name' => ifset($actions, [$e['action']], 'name', $e['action'])
             );
         }
         unset ($e);

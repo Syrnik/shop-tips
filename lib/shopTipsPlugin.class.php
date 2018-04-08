@@ -57,7 +57,7 @@ class shopTipsPlugin extends shopPlugin
 
     public function hookBackendOrder($params)
     {
-        $est_delivery = ifset($params['params']['shipping_est_delivery']);
+        $est_delivery = ifset($params, 'params', 'shipping_est_delivery', '');
         if (!$est_delivery) {
             return array();
         }
