@@ -57,7 +57,7 @@ class shopTipsPlugin extends shopPlugin
 
     public function hookBackendOrder($params)
     {
-        $est_delivery = ifset($params['params']['shipping_est_delivery']);
+        $est_delivery = ifset($params, 'params', 'shipping_est_delivery', '');
         if (!$est_delivery) {
             return array();
         }
@@ -71,5 +71,13 @@ $(function(){ $('p.s-order-address', 'div.s-order').before('<p style="margin-bot
 </script>
 EOT;
         return array('info_section' => $html);
+    }
+
+    protected function addJs($url, $is_plugin = true)
+    {
+        wa()->getResponse()->addJs(
+            ltrim(wa()->getAppStaticUrl('shop'), '/') . $this->getUrl($url, $is_plugin) . '?' . (waSystemConfig::isDebug() ? time() : 'v=' . $this->getVersion()),
+            false
+        );
     }
 }
