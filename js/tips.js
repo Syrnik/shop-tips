@@ -1,1 +1,30 @@
-var productTips=function(t){function o(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,o),i.l=!0,i.exports}var n={};return o.m=t,o.c=n,o.i=function(t){return t},o.d=function(t,n,r){o.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:r})},o.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(n,"a",n),n},o.o=function(t,o){return Object.prototype.hasOwnProperty.call(t,o)},o.p="",o(o.s=1)}([function(t,o,n){"use strict";var r=null;t.exports={runTab:function(){r=$(".tab-content","#s-product-profile-tabs").append('<div class="block s-tab-block bordered-left bordered-right bordered-bottom" data-tab="tipslog" id="s-plugin-tipslog-tab"></div>'),$("#s-product-profile-tabs").on("open",'.s-tab-block[data-tab="tipslog"]',function(){$(this).data("loaded")||$(this).load("?plugin=tips&module=product&action=log&product_id="+$.product.getId(),function(){$("h2 i.loading",r).hide()}).data("loaded",1)}),r.on("click",".pagination .menu-h a",function(){return $("h2 i.loading",r).show(),$("#s-tips-actions-log-container").load($(this).attr("href")+" #s-tips-actions-log",function(){$("h2 i.loading",r).hide()}),!1})}}},function(t,o,n){t.exports=n(0)}]);
+(function ($) {
+    $.productTips = {
+        runTab: function () {
+            var $tab_content = $('.tab-content', '#s-product-profile-tabs')
+                .append('<div class="block s-tab-block bordered-left bordered-right bordered-bottom" data-tab="tipslog" id="s-plugin-tipslog-tab"></div>');
+
+            $('#s-product-profile-tabs').on('open', '.s-tab-block[data-tab="tipslog"]', function () {
+                if (!$(this).data('loaded')) {
+                    $(this).load(
+                        '?plugin=tips&module=product&action=log&product_id=' + $.product.getId(),
+                        function () {
+                            $('h2 i.loading', $tab_content).hide();
+                        }
+                    ).data('loaded', 1);
+                }
+            });
+
+            $tab_content.on('click', '.pagination .menu-h a', function () {
+                $('h2 i.loading', $tab_content).show();
+                $('#s-tips-actions-log-container').load(
+                    $(this).attr('href') + ' #s-tips-actions-log',
+                    function () {
+                        $('h2 i.loading', $tab_content).hide();
+                    }
+                );
+                return false;
+            });
+        }
+    };
+})(jQuery);
