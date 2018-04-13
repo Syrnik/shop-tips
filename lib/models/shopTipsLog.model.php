@@ -25,7 +25,7 @@ class shopTipsLogModel extends waLogModel
             $e['datetime_human'] = waDateTime::format('humandatetime', strtotime($e['datetime']));
             $e += array(
                 'type'        => $this->actionType($e['action']),
-                'action_name' => ifset($actions, [$e['action']], 'name', $e['action'])
+                'action_name' => ifset($actions, $e['action'], 'name', $e['action'])
             );
         }
         unset ($e);
