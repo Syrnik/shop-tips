@@ -10,7 +10,7 @@
 return array(
     'name'     => _wp('Useful Stuff'),
     'img'      => 'img/tips.png',
-    'version'  => '1.4.2',
+    'version'  => '1.4.3',
     'vendor'   => '670917',
     'handlers' =>
         array(
