@@ -38,7 +38,7 @@ class shopTipsPlugin extends shopPlugin
     public function hookBackendProducts()
     {
         if ((bool)$this->getSettings('edit_history')) {
-            $this->addJs('js/tips.js');
+            $this->addJs('js/tips.' . waSystemConfig::isDebug() ? 'js' : 'min.js');
         }
     }
 
