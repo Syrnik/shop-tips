@@ -20,10 +20,10 @@ class shopTipsPlugin extends shopPlugin
         if (in_array($format, array('date', 'datetime'))) {
             $format = 'human' . $format;
             $result['toolbar_section'] =
-                '<div class="small"><table class="zebra bottom-bordered"><tr><td>'._wp('Created').':</td><td style="white-space: nowrap;text-align: right; font-weight: bold">' .
+                '<div class="small"><table class="zebra bottom-bordered"><tr><td>' . _wp('Created') . ':</td><td style="white-space: nowrap;text-align: right; font-weight: bold">' .
                 waDateTime::format($format, strtotime($product['create_datetime'])) .
                 '</td></tr>' .
-                ($product['edit_datetime'] !== null ? '<tr><td>'._wp('Updated').':</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format($format, strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
+                ($product['edit_datetime'] !== null ? '<tr><td>' . _wp('Updated') . ':</td><td style="white-space: nowrap;text-align: right;font-weight: bold">' . waDateTime::format($format, strtotime($product['edit_datetime'])) . '</td></tr>' : '') .
                 '</table></div>';
         }
 
@@ -38,7 +38,7 @@ class shopTipsPlugin extends shopPlugin
     public function hookBackendProducts()
     {
         if ((bool)$this->getSettings('edit_history')) {
-            $this->addJs('js/tips.' . waSystemConfig::isDebug() ? 'js' : 'min.js');
+            $this->addJs('js/tips.' . (waSystemConfig::isDebug() ? 'js' : 'min.js'));
         }
     }
 
