@@ -73,6 +73,13 @@ EOT;
         return array('info_section' => $html);
     }
 
+    public function routing($route = array())
+    {
+        return array(
+            'plugin_tips/to_cart/' => 'cart/add'
+        );
+    }
+
     protected function addJs($url, $is_plugin = true)
     {
         wa()->getResponse()->addJs(
