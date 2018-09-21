@@ -80,7 +80,7 @@ EOT;
                 'plugin_tips/to_cart/' => 'cart/add'
             );
         }
-        return [];
+        return array();
     }
 
     protected function addJs($url, $is_plugin = true)
