@@ -18,5 +18,11 @@ return array(
         'description'  => _wp('Show a product editing history in the separate tab at product view page in backend'),
         'control_type' => waHtmlControl::CHECKBOX,
         'value'        => '0'
+    ),
+    'add2cart'     => array(
+        'title'        => 'URL добавления в корзину для Яндекс.Турбо',
+        'description'  => 'Включить поддержку добавления в корзину для <a href="https://yandex.ru/support/webmaster/turbo/market.html" target="_blank">выгрузки YML в Яндекс.Турбо <i class=\"icon16 new-window\"</a>',
+        'control_type' => waHtmlControl::CHECKBOX,
+        'value'        => '0'
     )
 );
