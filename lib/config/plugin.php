@@ -12,6 +12,7 @@ return array(
     'img'      => 'img/tips.png',
     'version'  => '1.4.3',
     'vendor'   => '670917',
+    'frontend' => true,
     'handlers' =>
         array(
             'backend_product'  => 'hookBackendProduct',
