@@ -10,8 +10,9 @@
 return array(
     'name'     => _wp('Useful Stuff'),
     'img'      => 'img/tips.png',
-    'version'  => '1.4.3',
+    'version'  => '1.5.0',
     'vendor'   => '670917',
+    'frontend' => true,
     'handlers' =>
         array(
             'backend_product'  => 'hookBackendProduct',
