@@ -75,9 +75,12 @@ EOT;
 
     public function routing($route = array())
     {
-        return array(
-            'plugin_tips/to_cart/' => 'cart/add'
-        );
+        if ($this->getSettings('add2cart')) {
+            return array(
+                'plugin_tips/to_cart/' => 'cart/add'
+            );
+        }
+        return [];
     }
 
     protected function addJs($url, $is_plugin = true)
