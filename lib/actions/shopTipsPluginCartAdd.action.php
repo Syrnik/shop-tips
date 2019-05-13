@@ -5,6 +5,9 @@
  * @license MIT
  */
 
+/**
+ * Class shopTipsPluginCartAddAction
+ */
 class shopTipsPluginCartAddAction extends shopFrontendAction
 {
     public function execute()
