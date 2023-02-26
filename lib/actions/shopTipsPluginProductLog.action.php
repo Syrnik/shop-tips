@@ -1,16 +1,22 @@
 <?php
-
 /**
  * @author Serge Rodovnichenko <serge@syrnik.com>
- * @version
  * @copyright Serge Rodovnichenko, 2017
- * @license
+ * @license MIT
+ */
+
+/**
+ * История действий с продуктом
  */
 class shopTipsPluginProductLogAction extends waViewAction
 {
     /** @var shopTipsLogModel */
     protected $Log;
 
+    /**
+     * @return void
+     * @throws waException
+     */
     public function execute()
     {
         $actions = $errors = array();
@@ -29,13 +35,20 @@ class shopTipsPluginProductLogAction extends waViewAction
     }
 
 
+    /**
+     * @return void
+     */
     protected function preExecute()
     {
         parent::preExecute();
         $this->Log = new shopTipsLogModel();
     }
 
-    protected function paginate($product_id)
+    /**
+     * @param int $product_id
+     * @return array
+     */
+    protected function paginate(int $product_id): array
     {
         $limit = 25;
 

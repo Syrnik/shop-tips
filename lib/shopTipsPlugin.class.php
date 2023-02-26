@@ -1,10 +1,9 @@
 <?php
 /**
- * Tips plugin for Shop-Script 5+
+ * Tips plugin for Shop-Script
  *
  * @author Serge Rodovnichenko <serge@syrnik.com>
- * @version 1.4.0
- * @copyright Serge Rodovnichenko, 2015-2016
+ * @copyright Serge Rodovnichenko, 2015-2023
  * @license MIT
  */
 
@@ -13,7 +12,14 @@
  */
 class shopTipsPlugin extends shopPlugin
 {
-    public function hookBackendProduct($product)
+    /**
+     * @param $product
+     * @return array
+     * @throws SmartyException
+     * @throws waException
+     * @EventHandler backend_product Просмотр товара в админке UI 1.3
+     */
+    public function hookBackendProduct($product): array
     {
         $result = array();
         $format = $this->getSettings('product_date');
@@ -35,6 +41,12 @@ class shopTipsPlugin extends shopPlugin
         return $result;
     }
 
+    /**
+     * Просмотр товаров UI 1.3
+     *
+     * @return void
+     * @EventHandler backend_products
+     */
     public function hookBackendProducts()
     {
         if ((bool)$this->getSettings('edit_history')) {
@@ -48,14 +60,19 @@ class shopTipsPlugin extends shopPlugin
      * @param int|string $coupon_id
      * @return array|null
      */
-    public static function getCouponById($coupon_id)
+    public static function getCouponById($coupon_id): ?array
     {
         $Coupon = new shopCouponModel();
 
         return $Coupon->getById($coupon_id);
     }
 
-    public function hookBackendOrder($params)
+    /**
+     * @param $params
+     * @return array|string[]
+     * @throws waException
+     */
+    public function hookBackendOrder($params): array
     {
         $est_delivery = ifset($params, 'params', 'shipping_est_delivery', '');
         if (!$est_delivery) {
@@ -73,7 +90,11 @@ EOT;
         return array('info_section' => $html);
     }
 
-    public function routing($route = array())
+    /**
+     * @param $route
+     * @return array|string[]
+     */
+    public function routing($route = array()): array
     {
         if ($this->getSettings('add2cart')) {
             return array(
@@ -81,13 +102,5 @@ EOT;
             );
         }
         return array();
-    }
-
-    protected function addJs($url, $is_plugin = true)
-    {
-        wa()->getResponse()->addJs(
-            ltrim(wa()->getAppStaticUrl('shop'), '/') . $this->getUrl($url, $is_plugin) . '?' . (waSystemConfig::isDebug() ? time() : 'v=' . $this->getVersion()),
-            false
-        );
     }
 }
