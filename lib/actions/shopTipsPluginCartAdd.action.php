@@ -6,10 +6,20 @@
  */
 
 /**
+ * URL для добавления в корзину Я.Турбо
+ *
  * Class shopTipsPluginCartAddAction
+ *
+ * @ControllerAction cart/add
+ * @deprecated R.I.P Яндекс.Турбо 03.2023. Оставлено для совместимости, чтоб у людей не начали внезапно падать сайты с
+ *     404
  */
 class shopTipsPluginCartAddAction extends shopFrontendAction
 {
+    /**
+     * @return void
+     * @throws waException
+     */
     public function execute()
     {
         $url = wa()->getRouteUrl('shop/frontend/cart');
