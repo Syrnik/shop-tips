@@ -33,7 +33,7 @@ class shopTipsPlugin extends shopPlugin
                 '</table></div>';
         }
 
-        if ((bool)$this->getSettings('edit_history')) {
+        if ($this->getSettings('edit_history')) {
             $view = wa()->getView();
             $result['tab_li'] = $view->fetch($this->path . '/templates/hooks/backend_product_tab_li.html');
         }
