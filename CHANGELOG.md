@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Relabeled the "add to cart URL" setting as deprecated and dropped the link to Yandex's Turbo cart docs: Yandex discontinued the Turbo cart integration this setting was built for. The setting (and the underlying controller) stays only so shops that already enabled it don't break.
+
 ## [2.0.0] - 2026-09-18
 
 ### Added

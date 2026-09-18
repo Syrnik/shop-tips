@@ -20,8 +20,8 @@ return array(
         'value'        => '0'
     ),
     'add2cart'     => array(
-        'title'        => 'URL добавления в корзину для Яндекс.Турбо',
-        'description'  => 'Включить поддержку добавления в корзину для <a href="https://yandex.ru/support/webmaster/turbo/market.html" target="_blank">выгрузки YML в Яндекс.Турбо <i class=\"icon16 new-window\"</a>',
+        'title'        => 'URL добавления в корзину (устарело)',
+        'description'  => 'Яндекс отключил Турбо-корзину, для которой создавался этот URL, поэтому включать эту настройку больше нет смысла. Оставлена только для сайтов, где она уже была включена ранее.',
         'control_type' => waHtmlControl::CHECKBOX,
         'value'        => '0'
     )
