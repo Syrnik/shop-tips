@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- The "add to cart URL" setting and the `plugin_tips/to_cart/` route/controller built for Yandex's Turbo cart integration, which Yandex has discontinued. Shops that had the setting enabled will stop resolving that URL (it now 404s instead of adding to cart) — there is no live consumer of it left to break.
+- The "add to cart URL" setting and the `plugin_tips/to_cart/` route/controller built for Yandex's Turbo cart integration, which Yandex has discontinued. Shops that had the setting enabled will stop resolving that URL (it now 404s instead of adding to cart) — there is no live consumer of it left to break. An update script (`lib/updates/2.0.0/1789736781.php`) clears the leftover `add2cart` setting value from the database.
 
 ## [2.0.0] - 2026-09-18
 
