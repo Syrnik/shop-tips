@@ -10,7 +10,7 @@ class shopTipsLogModel extends waLogModel
 {
     /**
      * @param int $product_id
-     * @param null|int $limit
+     * @param null|int|string|array $limit
      * @return array
      */
     public function getProductLog($product_id, $limit=null)
@@ -46,6 +46,7 @@ class shopTipsLogModel extends waLogModel
      * Блин. Нам нужен limit
      *
      * @param array $where
+     * @param null|int|string|array $limit
      * @return array
      * @throws waException
      */
@@ -90,10 +91,10 @@ c.company, c.is_company, c.is_user, c.login
 
     private function actionType($action)
     {
-        if (strpos($action, 'del')) {
+        if (strpos($action, 'del') !== false) {
             return 4;
         }
-        if (strpos($action, 'add')) {
+        if (strpos($action, 'add') !== false) {
             return 3;
         }
         return 1;

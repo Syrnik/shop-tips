@@ -16,9 +16,9 @@ class shopTipsPluginViewHelper extends waPluginViewHelper
      * Купон по его id
      *
      * @param int|string $coupon_id ID купона
-     * @return array
+     * @return array|null
      */
-    public function getCouponById($coupon_id): array
+    public function getCouponById($coupon_id): ?array
     {
         return shopTipsPlugin::getCouponById($coupon_id);
     }
