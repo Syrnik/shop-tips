@@ -3,14 +3,14 @@
  * Tips plugin for Shop-Script 5+
  *
  * @author Serge Rodovnichenko <serge@syrnik.com>
- * @version 1.4.0
- * @copyright Serge Rodovnichenko, 2015-2017
+ * @version 2.0.0
+ * @copyright Serge Rodovnichenko, 2015-2026
  * @license MIT
  */
 return array(
     'name'     => /*_wp*/('Useful Stuff'),
     'img'      => 'img/tips.png',
-    'version'  => '1.5.0',
+    'version'  => '2.0.0',
     'vendor'   => '670917',
     'frontend' => true,
     'handlers' =>
