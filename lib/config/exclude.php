@@ -20,6 +20,8 @@ return array(
     'psalm-baseline-74.xml',
     'psalm-baseline-85.xml',
     'tests',
+    'docs',
+    'docs/*',
     'js/node_modules',
     'js/.babelrc',
     'js/package.json',
