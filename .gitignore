@@ -1,3 +1,2 @@
 *.tar.gz
 tests/.psalm-cache-*/
-locale/**/*.mo

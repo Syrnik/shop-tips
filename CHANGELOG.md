@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- The release archive was missing `.mo` files entirely (no Russian translation at all): `compress-app-plugin.php` merges `.gitignore` rules into its own exclude list, so `locale/**/*.mo` there was also cutting the freshly-compiled `.mo` out of the packaged archive, not just out of git. Removed the gitignore entry — `.mo` files still aren't committed, but the CI-compiled copy now makes it into the archive.
+
 ## [2.0.1] - 2026-09-18
 
 ### Changed
