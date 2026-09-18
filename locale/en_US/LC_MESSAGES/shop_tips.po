@@ -28,7 +28,7 @@ msgid "Edit history"
 msgstr ""
 
 #: /wa-apps/shop/plugins/tips/lib/config/settings.php:18
-msgid "Show a product editing history in the separate tab at product view page in backend"
+msgid "Show a product editing history in the separate tab at product view page in backend (classic product editor, UI 1.3, only)"
 msgstr ""
 
 #: /wa-apps/shop/plugins/tips/lib/shopTipsPlugin.class.php:23
@@ -52,7 +52,7 @@ msgid "Product dates"
 msgstr ""
 
 #: /wa-apps/shop/plugins/tips/lib/config/settings.php:11
-msgid "Show date of creation and editing of product"
+msgid "Show date of creation and editing of product (classic product editor, UI 1.3, only)"
 msgstr ""
 
 #: /wa-apps/shop/plugins/tips/lib/config/settings.php:14

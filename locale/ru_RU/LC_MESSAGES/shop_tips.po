@@ -30,8 +30,8 @@ msgid "Edit history"
 msgstr "История правок"
 
 #: /wa-apps/shop/plugins/tips/lib/config/settings.php:18
-msgid "Show a product editing history in the separate tab at product view page in backend"
-msgstr "Показывать историю редактирования товара в отдельной вкладке на странице товара в бекенде"
+msgid "Show a product editing history in the separate tab at product view page in backend (classic product editor, UI 1.3, only)"
+msgstr "Показывать историю редактирования товара в отдельной вкладке на странице товара в бекенде (только в классическом редакторе товара, UI 1.3)"
 
 #: /wa-apps/shop/plugins/tips/lib/shopTipsPlugin.class.php:23
 msgid "Created"
@@ -54,8 +54,8 @@ msgid "Product dates"
 msgstr "Даты товара"
 
 #: /wa-apps/shop/plugins/tips/lib/config/settings.php:11
-msgid "Show date of creation and editing of product"
-msgstr "Показывать даты создания и редактирования товара"
+msgid "Show date of creation and editing of product (classic product editor, UI 1.3, only)"
+msgstr "Показывать даты создания и редактирования товара (только в классическом редакторе товара, UI 1.3)"
 
 #: /wa-apps/shop/plugins/tips/lib/config/settings.php:14
 msgid "do not show"
