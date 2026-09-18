@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Raised minimum requirements: PHP >= 7.2, `app.shop` >= 8.18 (previously only `app.installer` >= 2.0.0 was required).
+- Raised minimum requirements: PHP >= 7.4, `app.shop` >= 8.18 (previously only `app.installer` >= 2.0.0 was required).
 - Internal cleanup of `shopTipsPlugin`, `shopTipsPluginProductLog`, and the Yandex.Turbo cart-add action.
 
 ## [1.5.0] - 2018-09-21
