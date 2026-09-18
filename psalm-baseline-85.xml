@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="6.16.1@f1f5de594dc76faf8784e02d3dc4716c91c6f6ac">
+  <file src="lib/actions/shopTipsPluginCartAdd.action.php">
+    <InvalidCast>
+      <code><![CDATA[$errors]]></code>
+    </InvalidCast>
+    <InvalidScalarArgument>
+      <code><![CDATA['__toString']]></code>
+    </InvalidScalarArgument>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function execute()]]></code>
+    </MissingOverrideAttribute>
+    <UnusedClass>
+      <code><![CDATA[shopTipsPluginCartAddAction]]></code>
+    </UnusedClass>
+    <UnusedMethodCall>
+      <code><![CDATA[setAccessible]]></code>
+    </UnusedMethodCall>
+    <UnusedVariable>
+      <code><![CDATA[$error]]></code>
+    </UnusedVariable>
+  </file>
+  <file src="lib/actions/shopTipsPluginProductLog.action.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected function preExecute()]]></code>
+      <code><![CDATA[public function execute()]]></code>
+    </MissingOverrideAttribute>
+    <UnusedClass>
+      <code><![CDATA[shopTipsPluginProductLogAction]]></code>
+    </UnusedClass>
+  </file>
+  <file src="lib/classes/shopTipsPluginViewHelper.class.php">
+    <TypeDoesNotContainType>
+      <code><![CDATA[is_array($result)]]></code>
+    </TypeDoesNotContainType>
+    <UnusedClass>
+      <code><![CDATA[shopTipsPluginViewHelper]]></code>
+    </UnusedClass>
+  </file>
+  <file src="lib/models/shopTipsLog.model.php">
+    <InvalidArgument>
+      <code><![CDATA[strtotime($e['datetime'])]]></code>
+    </InvalidArgument>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getLogs($where = array(), $limit = null)]]></code>
+    </MissingOverrideAttribute>
+    <UndefinedMagicMethod>
+      <code><![CDATA[fetchAll]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="lib/shopTipsPlugin.class.php">
+    <InvalidArgument>
+      <code><![CDATA[strtotime($product['create_datetime'])]]></code>
+      <code><![CDATA[strtotime($product['edit_datetime'])]]></code>
+    </InvalidArgument>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function routing($route = array()): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[hookBackendOrder]]></code>
+      <code><![CDATA[hookBackendProduct]]></code>
+      <code><![CDATA[hookBackendProducts]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+</files>
