@@ -24,5 +24,7 @@ return array(
     'dist/*',
     'build',
     'build/*',
-    '.git'
+    '.git',
+    'LICENSE.md',
+    '.editorconfig',
 );
