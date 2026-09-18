@@ -8,7 +8,7 @@
  * @license MIT
  */
 return array(
-    'name'     => _wp('Useful Stuff'),
+    'name'     => /*_wp*/('Useful Stuff'),
     'img'      => 'img/tips.png',
     'version'  => '1.5.0',
     'vendor'   => '670917',
@@ -17,6 +17,7 @@ return array(
         array(
             'backend_product'  => 'hookBackendProduct',
             'backend_products' => 'hookBackendProducts',
-            'backend_order'    => 'hookBackendOrder'
+            'backend_order'    => 'hookBackendOrder',
+            'routing'          => 'routing'
         ),
 );

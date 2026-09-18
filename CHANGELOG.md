@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Raised minimum requirements: PHP >= 7.4, `app.shop` >= 8.18 (previously only `app.installer` >= 2.0.0 was required).
 - Internal cleanup of `shopTipsPlugin`, `shopTipsPluginProductLog`, and the Yandex.Turbo cart-add action.
+- Plugin name in `lib/config/plugin.php` is no longer wrapped in a live `_wp()` call (needed so the release packaging tool can safely parse the config as static data); the name is now only translated via the `.po` catalog at compile/extraction time, not re-resolved at runtime. Practical effect: the plugin name in the backend plugin list stops following the admin's locale and always reads "Useful Stuff".
 
 ### Fixed
 

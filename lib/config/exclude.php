@@ -30,6 +30,9 @@ return array(
     'build',
     'build/*',
     '.git',
+    '.github',
+    '.github/*',
+    'compress-app-plugin.php',
     'LICENSE.md',
     '.editorconfig',
 );
