@@ -2,6 +2,7 @@
 return array(
     'README.md',
     'CHANGELOG.md',
+    'AGENTS.md',
     'CONTRIBUTING.md',
     'contributors.txt',
     'img/screenshot_*',
@@ -14,6 +15,10 @@ return array(
     '*.min.min.css',
     'phpcompatinfo.json',
     'phpunit.xml',
+    'psalm74.xml',
+    'psalm85.xml',
+    'psalm-baseline-74.xml',
+    'psalm-baseline-85.xml',
     'tests',
     'js/node_modules',
     'js/.babelrc',
