@@ -18,11 +18,5 @@ return array(
         'description'  => _wp('Show a product editing history in the separate tab at product view page in backend'),
         'control_type' => waHtmlControl::CHECKBOX,
         'value'        => '0'
-    ),
-    'add2cart'     => array(
-        'title'        => 'URL добавления в корзину (устарело)',
-        'description'  => 'Яндекс отключил Турбо-корзину, для которой создавался этот URL, поэтому включать эту настройку больше нет смысла. Оставлена только для сайтов, где она уже была включена ранее.',
-        'control_type' => waHtmlControl::CHECKBOX,
-        'value'        => '0'
     )
 );

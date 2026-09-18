@@ -89,18 +89,4 @@ $(function(){ $('p.s-order-address', 'div.s-order').before('<p style="margin-bot
 EOT;
         return array('info_section' => $html);
     }
-
-    /**
-     * @param $route
-     * @return array|string[]
-     */
-    public function routing($route = array()): array
-    {
-        if ($this->getSettings('add2cart')) {
-            return array(
-                'plugin_tips/to_cart/' => 'cart/add'
-            );
-        }
-        return array();
-    }
 }

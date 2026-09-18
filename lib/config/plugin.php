@@ -12,12 +12,10 @@ return array(
     'img'      => 'img/tips.png',
     'version'  => '2.0.0',
     'vendor'   => '670917',
-    'frontend' => true,
     'handlers' =>
         array(
             'backend_product'  => 'hookBackendProduct',
             'backend_products' => 'hookBackendProducts',
-            'backend_order'    => 'hookBackendOrder',
-            'routing'          => 'routing'
+            'backend_order'    => 'hookBackendOrder'
         ),
 );
